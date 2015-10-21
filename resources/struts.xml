@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<package name="s2sh" namespace="/user" extends="struts-default">
+
+
+		<action name="register" method="register"
+			class="com.cineplex.action.RegisterAction">
+			<result name="error">/JSPs/user/index.jsp</result>
+			<result name="success">/JSPs/user/member-index.jsp</result>
+		</action>
+
+		<action name="recharge" method="recharge"
+			class="com.cineplex.action.MemberCardAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="input">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/member-index.jsp</result>
+		</action>
+
+		<action name="checkCards" method="checkCards"
+			class="com.cineplex.action.MemberCardAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/recharge.jsp</result>
+		</action>
+
+
+		<action name="getAllFilms" method="getAllFilms"
+			class="com.cineplex.action.FilmAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/buy-ticket-all.jsp</result>
+			<result name="waiter">/JSPs/waiter/sell-ticket-all.jsp</result>
+		</action>
+
+		<action name="getFilmRecords" method="getFilmRecordByFilmId"
+			class="com.cineplex.action.FilmRecordAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/buy-ticket.jsp</result>
+			<result name="waiter">/JSPs/waiter/sell-ticket.jsp</result>
+		</action>
+
+		<action name="checkSeats" method="checkSeat"
+			class="com.cineplex.action.FilmRecordAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/choose-seat.jsp</result>
+			<result name="waiter">/JSPs/waiter/choose-seat.jsp</result>
+		</action>
+
+		<action name="confirmOrder" method="confirm"
+			class="com.cineplex.action.TicketAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/firm-order.jsp</result>
+			<result name="waiter">/JSPs/waiter/sell-ticket-info.jsp</result>
+		</action>
+
+		<action name="buyTicket" method="buyTicket"
+			class="com.cineplex.action.TicketAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/member-index.jsp</result>
+		</action>
+
+		<action name="getActivities" method="getAllActivities"
+			class="com.cineplex.action.ActivityAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/attend-activity-all.jsp</result>
+		</action>
+
+		<action name="checkActivity" method="checkActivity"
+			class="com.cineplex.action.ActivityAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/attend-activity.jsp</result>
+		</action>
+
+		<action name="attendActivity" method="attendActivity"
+			class="com.cineplex.action.ActivityAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/member-index.jsp</result>
+		</action>
+
+		<action name="getInfo" method="getInfo"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/personal-info.jsp</result>
+		</action>
+
+		<action name="checkInfo" method="checkInfo"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/change-info.jsp</result>
+		</action>
+
+		<action name="changeInfo" method="changeInfo"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/member-index.jsp</result>
+		</action>
+
+		<action name="changePassword" method="changePassword"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/index.html</result>
+		</action>
+
+		<action name="getConsumption" method="getConsumption"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/history.jsp</result>
+		</action>
+
+		<action name="getRecharge" method="getRecharge"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/history.jsp</result>
+		</action>
+
+
+		<action name="unbind" method="unbind"
+			class="com.cineplex.action.MemberCardAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/user/member-index.jsp</result>
+		</action>
+
+		<action name="errorBack" method="errorBack"
+			class="com.cineplex.action.LoginAction">
+			<result name="member">/JSPs/user/member-index.jsp</result>
+			<result name="manager">/JSPs/manager/manager-index.jsp</result>
+			<result name="waiter">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+	</package>
+
+	<package name="s2sh1" namespace="/waiter" extends="struts-default">
+		<action name="checkSeats" method="checkSeat"
+			class="com.cineplex.action.FilmRecordAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/choose-seat.jsp</result>
+			<result name="waiter">/JSPs/waiter/choose-seat.jsp</result>
+		</action>
+
+		<action name="publishFilm" method="publishFilm"
+			class="com.cineplex.action.FilmAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+
+		<action name="getFilmRecords" method="getFilmRecordByFilmId"
+			class="com.cineplex.action.FilmRecordAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/buy-ticket.jsp</result>
+			<result name="waiter">/JSPs/waiter/sell-ticket.jsp</result>
+		</action>
+
+		<action name="getPlan" method="getPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="manager">/JSPs/manager/approve-plan.jsp</result>
+			<result name="member">/JSPs/user/buy-ticket.jsp</result>
+			<result name="waiter">/JSPs/waiter/modify-plan.jsp</result>
+		</action>
+
+		<action name="getAllFilms" method="getAllFilms"
+			class="com.cineplex.action.FilmAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="member">/JSPs/user/buy-ticket-all.jsp</result>
+			<result name="waiter">/JSPs/waiter/sell-ticket-all.jsp</result>
+		</action>
+
+		<action name="makePlan" method="makePlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+
+		<action name="getAllFilmNames" method="getAllFilmNames"
+			class="com.cineplex.action.FilmAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/make-plan.jsp</result>
+		</action>
+
+		<action name="getActiveFilmNames" method="getActiveFilmNames"
+			class="com.cineplex.action.FilmAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/make-activity.jsp</result>
+		</action>
+
+		<action name="makeActivity" method="makeActivity"
+			class="com.cineplex.action.ActivityAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/choose-plan.jsp</result>
+		</action>
+
+		<action name="choosePlan" method="choosePlan"
+			class="com.cineplex.action.ActivityAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+
+		<action name="choosePayType" method="choosePayType"
+			class="com.cineplex.action.TicketAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/sell-ticket-info.jsp</result>
+		</action>
+
+		<action name="idle" method="idle" class="com.cineplex.action.TicketAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/choose-pay-type.jsp</result>
+		</action>
+
+		<action name="idle1" method="idle" class="com.cineplex.action.TicketAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/publish-film.jsp</result>
+		</action>
+
+		<action name="sellTicket" method="sellTicket"
+			class="com.cineplex.action.TicketAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+
+		<action name="getUnpassedPlan" method="getUnpassedPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/modify-plan-all.jsp</result>
+		</action>
+
+		<action name="getPassedPlan" method="getPassedPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/plan-history.jsp</result>
+		</action>
+
+		<action name="modifyPlan" method="modifyPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+
+		<action name="getAllMembers" method="getAllMembers"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/member-info-all.jsp</result>
+		</action>
+
+		<action name="getMemberInfo" method="getMemberInfo"
+			class="com.cineplex.action.MemberAction">
+			<result name="error">/JSPs/waiter/error.jsp</result>
+			<result name="success">/JSPs/waiter/member-info-single.jsp</result>
+		</action>
+
+		<action name="errorBack" method="errorBack"
+			class="com.cineplex.action.LoginAction">
+			<result name="member">/JSPs/user/member-index.jsp</result>
+			<result name="manager">/JSPs/manager/manager-index.jsp</result>
+			<result name="waiter">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+	</package>
+
+	<package name="s2sh2" namespace="/manager" extends="struts-default">
+		<action name="getPlan" method="getPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="manager">/JSPs/manager/approve-plan.jsp</result>
+			<result name="member">/JSPs/user/buy-ticket.jsp</result>
+			<result name="waiter">/JSPs/waiter/modify-plan.jsp</result>
+		</action>
+
+		<action name="getUnpassedPlan" method="getUnpassedPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/manager-index.jsp</result>
+		</action>
+
+		<action name="getUncheckedPlan" method="getUnckeckedPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/approve-plan-all.jsp</result>
+		</action>
+
+		<action name="getPassedPlan" method="getPassedPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/manager-index.jsp</result>
+		</action>
+
+		<action name="replyPlan" method="replyPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/manager-index.jsp</result>
+		</action>
+
+		<action name="idle" method="idle"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic.jsp</result>
+		</action>
+
+		<action name="getActivityStatistic" method="getActivityStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-activity.jsp</result>
+		</action>
+
+		<action name="getMemberCardStatistic" method="getMemberCardStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-member-card.jsp</result>
+		</action>
+
+		<action name="getPeopleStatistic" method="getPeopleStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-people.jsp</result>
+		</action>
+
+		<action name="getHallAttendance" method="getHallAttendanceStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-attendance-hall.jsp
+			</result>
+		</action>
+
+		<action name="getFilmAttendance" method="getFilmAttendanceStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-attendance-film.jsp
+			</result>
+		</action>
+
+		<action name="getMoneyStatistic" method="getMoneyStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-money.jsp</result>
+		</action>
+
+		<action name="getMonthPeopleStatistic" method="getMonthPeopleStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-month-people.jsp</result>
+		</action>
+
+		<action name="getMonthHallStatistic" method="getMonthHallStatistic"
+			class="com.cineplex.action.StatisticAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/statistic-month-hall.jsp</result>
+		</action>
+
+		<action name="getAppliedPlan" method="getAppliedPlan"
+			class="com.cineplex.action.ScreeningPlanAction">
+			<result name="error">/JSPs/manager/error.jsp</result>
+			<result name="success">/JSPs/manager/approved-plan.jsp</result>
+		</action>
+
+		<action name="errorBack" method="errorBack"
+			class="com.cineplex.action.LoginAction">
+			<result name="member">/JSPs/user/member-index.jsp</result>
+			<result name="manager">/JSPs/manager/manager-index.jsp</result>
+			<result name="waiter">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+	</package>
+
+	<package name="s2sh3" namespace="/login" extends="struts-default">
+		<action name="login" method="login" class="com.cineplex.action.LoginAction">
+			<result name="error">/JSPs/login.jsp</result>
+			<result name="member">/JSPs/user/member-index.jsp</result>
+			<result name="manager">/JSPs/manager/manager-index.jsp</result>
+			<result name="waiter">/JSPs/waiter/waiter-index.jsp</result>
+		</action>
+
+
+		<action name="logOut" method="logOut" class="com.cineplex.action.LoginAction">
+			<result name="error">/JSPs/user/error.jsp</result>
+			<result name="success">/JSPs/index.html</result>
+		</action>
+
+		<action name="register" method="register"
+			class="com.cineplex.action.RegisterAction">
+			<result name="error">/JSPs/user/index.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">login</param>
+				<param name="account">${account}</param>
+				<param name="password">${password}</param>
+			</result>
+		</action>
+	</package>
+
+</struts> 

@@ -1,0 +1,361 @@
+@import
+	url(http://fonts.googleapis.com/css?family=Noto+Sans&subset=devanagari)
+	;
+
+@import
+	url(http://fonts.googleapis.com/css?family=Ubuntu:300|Open+Sans:300|Titillium+Web:400,400italic,600)
+	;
+
+.page-header.sanskrit {
+	background: #E6304C;
+}
+
+.no-margin, .no-space, header[role=banner] .page-header, header[role=banner] .page-header .title,
+	header[role=banner] .page-header h2, header[role=banner] .page-header h3
+	{
+	margin: 0;
+}
+
+.no-padding, html, body, .page, .wrapper {
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+html, body, .page, .wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font: 400 1.4rem/1.429 "Titillium Web";
+	color: #2C3E50;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+}
+
+main, aside, footer {
+	padding: 5px 9px;
+}
+
+.flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.autoleft {
+	margin-left: auto;
+}
+
+.wrapper {
+	-webkit-box-flex: 1;
+	-webkit-flex: auto;
+	-ms-flex: auto;
+	flex: auto;
+}
+
+.page {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.content {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	overflow-y: auto;
+}
+
+header[role=banner] {
+	margin-bottom: 15px;
+}
+
+header[role=banner] .page-header {
+	background: #2E323E;
+	color: #fff;
+	padding: 5px 14px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.31);
+	border-bottom: none;
+	height: 6rem;
+}
+
+header[role=banner] .page-header.sanskrit {
+	background: #E6304C;
+}
+
+header[role=banner] .page-header i {
+	font-size: 3.2rem;
+	padding: 0;
+	width: 60px;
+	font-style: normal;
+	text-align: center;
+}
+
+header[role=banner] .page-header .title {
+	font-familiy: "Ubuntu";
+	font-weight: 300;
+	line-height: 1.1;
+	font-size: 3.7rem;
+	-webkit-font-smoothing: antialiased;
+}
+
+header[role=banner] .summary {
+	padding-left: 7.4rem;
+	background: #fff;
+	color: #2E323E;
+	margin-top: 0;
+}
+
+/** menu parent
+=================================================================== */
+.menu {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 1rem 0;
+	list-style: none;
+}
+
+.menu li {
+	font-size: 1.8rem;
+	line-height: 1.618;
+	margin-right: 9px;
+}
+
+.menu a {
+	display: block;
+	text-decoration: none;
+}
+
+/** brackets menu style
+=================================================================== */
+.menu.brackets a {
+	position: relative;
+	color: inherit;
+	-webkit-transition: color 0.4s ease 0s;
+	transition: color 0.4s ease 0s;
+	padding: 0 14px;
+}
+
+.menu.brackets a:hover, .menu.brackets a.active {
+	color: #2c90c6;
+}
+
+.menu.brackets a:hover:before, .menu.brackets a:hover:after, .menu.brackets a.active:before,
+	.menu.brackets a.active:after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.menu.brackets a:before {
+	content: "[";
+	left: -0.1rem;
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.menu.brackets a:after {
+	content: "]";
+	right: -0.1rem;
+	-webkit-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.menu.brackets a:before, .menu.brackets a:after {
+	font-size: 150%;
+	font-weight: 100;
+	line-height: 1;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	-webkit-transition: opacity 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+	transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
+}
+
+/** underline menu style
+=================================================================== */
+.menu.underline li:first-child {
+	margin-left: 0;
+}
+
+.menu.underline li:last-child {
+	margin-right: 0;
+}
+
+.menu.underline li {
+	padding: 0 14px;
+}
+
+.menu.underline a {
+	position: relative;
+	display: block;
+	outline: none;
+	color: inherit;
+	letter-spacing: 1px;
+	text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.3);
+	font-size: 1.8rem;
+}
+
+.menu.underline a.active {
+	color: #0EA462;
+}
+
+.menu.underline a.active:before, .menu.underline a.active:after {
+	background: none repeat scroll 0 0 #0EA462;
+	content: "";
+	height: 3px;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	-webkit-transform: scale(0.85);
+	-ms-transform: scale(0.85);
+	transform: scale(0.85);
+	-webkit-transition: -webkit-transform 0.3s ease 0s;
+	transition: transform 0.3s ease 0s;
+	width: 100%;
+}
+
+.menu.underline a:after {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 1px;
+	background: #0EA462;
+	content: "";
+	height: 1px;
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+	-webkit-transition: height 0.3s ease 0s, opacity 0.3s ease 0s,
+		-webkit-transform 0.3s ease 0s;
+	transition: height 0.3s ease 0s, opacity 0.3s ease 0s, transform 0.3s
+		ease 0s;
+}
+
+.menu.underline a:hover {
+	color: #0EA462;
+}
+
+.menu.underline a:hover:after, .menu.underline a:focus:after {
+	height: 3px;
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+/** subnav menu style
+=================================================================== */
+.subnav {
+	background: #E6304C;
+	-webkit-box-flex: 1;
+	-webkit-flex: auto;
+	-ms-flex: auto;
+	flex: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	height: 6rem;
+	padding: 0 1rem;
+	/*  a:after {
+  opacity: 0;
+  top: 100%;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+  */
+	/* a:before, a:after {
+  background: #fff;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s ease 0s, height 0.3s ease 0s;
+  width: 100%;
+}*/
+}
+
+.subnav a {
+	color: white;
+	outline: none;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.subnav a span:first-child {
+	display: block;
+	font-family: "Noto Sans", Ubuntu;
+	font-size: 2.3rem;
+	font-weight: 400;
+	z-index: 2;
+	text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.31);
+}
+
+.subnav a span:last-child {
+	color: rgba(255, 255, 255, 0.8);
+	display: block;
+	font-family: Ubuntu;
+	letter-spacing: 1px;
+	opacity: 0;
+	text-shadow: none;
+	text-transform: none;
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: -webkit-transform 0.3s ease 0s, opacity 0.3s ease 0s;
+	transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+	z-index: 1;
+}
+
+.subnav a:hover:before, .subnav a:hover:after, .subnav a:focus:before,
+	.subnav a:focus:after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.subnav a:hover span:last-child, .subnav a:focus span:last-child {
+	opacity: 1;
+	-webkit-transform: translateY(-20%);
+	-ms-transform: translateY(-20%);
+	transform: translateY(-20%);
+}
